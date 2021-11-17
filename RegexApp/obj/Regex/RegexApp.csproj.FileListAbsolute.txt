@@ -1,0 +1,11 @@
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\bin\Regex\RegexApp.exe.config
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\bin\Regex\RegexApp.exe
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\bin\Regex\MaterialSkin.dll
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.csproj.AssemblyReference.cache
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.FindURL.resources
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.Properties.Resources.resources
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.Settings.resources
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.TestPattern.resources
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.csproj.GenerateResource.cache
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.csproj.CoreCompileInputs.cache
+C:\Users\qendr\Desktop\REGEX# FINAL\RegexAppFinal\RegexApp\obj\Regex\RegexApp.exe

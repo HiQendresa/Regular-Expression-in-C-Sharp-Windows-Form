@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
+
+namespace testRegex
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        Match match = null;
+        Regex _regex = null;
+        
+        RegexOptions _regexOptions = RegexOptions.None;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string data;
+
+            data = System.IO.File.ReadAllText("C:\\Users\\qendr\\Desktop\\RegexApp\\RegexApp\\MyData\\myData.txt", Encoding.UTF8);
+            this.textBox1.Text = data;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Clear();
+            this.textBox2.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // A scheme, A host, A path, A query string
+
+            string pattern = @"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)";
+            string[] URLcomponents = { "The Schema", "Host", "Path", "Query", };
+
+            string text = textBox1.Text;
+
+            MatchCollection matchColl = Regex.Matches(text, pattern);
+            match = Regex.Match(text, pattern);
+            _regex = new Regex(pattern, _regexOptions);
+           
+            textBox2.Text = $"Total matches: {matchColl.Count}" + Environment.NewLine;
+            textBox2.Text += $"The found match:  {match.Value}";
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (_regex != null && match != null)
+            {
+              Stopwatch stopWatch = new Stopwatch();
+                stopWatch.Start();
+
+                match = match.NextMatch();
+
+                stopWatch.Stop();
+               highLightMatch(stopWatch.Elapsed);
+            }
+        }
+
+
+        private void highLightMatch(TimeSpan elapsed)
+        {
+            if (_regex != null && match != null && match.Success)
+            
+            textBox1.Focus();
+                textBox1.Select(match.Index, match.Length);
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine();
+
+            // Group 0 is default group that matches the complete expression
+          
+                sb.Append($"The found match:{match.Value}");
+                
+
+            if (match.Groups.Count < 1)
+            {
+                textBox2.Text += string.Format($"End. Elapsed Time: {elapsed.TotalSeconds:0.##}{Environment.NewLine}");
+            }
+            textBox2.Text += sb.ToString();
+        }
+    }
+}
